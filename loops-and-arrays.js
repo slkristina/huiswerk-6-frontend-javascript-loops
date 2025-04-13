@@ -9,10 +9,16 @@
 // Vergadering om 14:00
 // Vergadering om 15:30
 // Vergadering om 17:00
-// ==========================================
+
 
 const meetingTimes = ['09:00', '10:30', '14:00', '15:30', '17:00'];
 
+for (let i = 0; i < meetingTimes.length; i++) {
+    console.log("Vergadering om " + meetingTimes[i]);
+}
+
+const answer1 = meetingTimes.map(time => console.log(`Vergadering om ${time}`));
+// ==========================================
 
 // ==========================================
 // Opdracht 2. In tegenstelling tot Bob, werken de andere medewerkers van Loop-it Solutions wél hard.
@@ -23,9 +29,21 @@ const meetingTimes = ['09:00', '10:30', '14:00', '15:30', '17:00'];
 
 // Verwachtte uitkomst:
 // console.log(salaries) geeft [3360, 2467.5, 2940, 3675, 2940]
-// ==========================================
 
 const salaries = [3200, 2350, 2800, 3500, 2800];
+
+// Solution 1
+const answerTwoArray = [];
+for (let i = 0; i < salaries.length; i++) {
+    let increasedSalary = salaries[i] * 1.05;
+    answerTwoArray.push(increasedSalary)
+}
+console.log(answerTwoArray)
+
+// Solution 2
+
+const answer2 = salaries.map(salary => salary * 1.05)
+console.log(answer2);
 
 
 // ==========================================
@@ -35,9 +53,18 @@ const salaries = [3200, 2350, 2800, 3500, 2800];
 
 // Verwachte uitkomst:
 // console.log(birthYears) geeft [30, 28, 35, 22, 43]
-// ==========================================
 
 const birthYears = [1995, 1997, 1990, 2003, 1982];
+
+for (let i = 0; i < birthYears.length; i++) {
+    let age = 2025 - birthYears[i];
+    console.log(age)
+}
+
+const answer3 = birthYears.map(year => new Date().getFullYear() - year)
+
+console.log(answer3)
+// ==========================================
 
 
 // ==========================================
@@ -48,9 +75,18 @@ const birthYears = [1995, 1997, 1990, 2003, 1982];
 
 // Verwachte uitkomst:
 // console.log(leaveHours) geeft [12, 4.5, 4, 3.5, 1.5]
-// ==========================================
 
 const leaveHours = [6, 9, 2, 7, 3];
+const answer4 = leaveHours
+    .map(number => {
+        if (number % 2 === 0) {
+            return number * 2;
+        } else {
+            return number * 0.5;
+        }
+    })
+console.log(answer4)
+// ==========================================
 
 
 // ==========================================
@@ -69,4 +105,9 @@ const leaveHours = [6, 9, 2, 7, 3];
 
 const productionCodes = [" abC123  ", "  DEF456", "ghi789  ", "JKL012"];
 
+const answer5 = productionCodes
+    .map(code => code
+        .toUpperCase()
+        .trim())
 
+console.log(answer5);

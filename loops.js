@@ -6,8 +6,12 @@
 // ***
 // ****
 // *****
-
 // Tip: je kunt de .repeat() methode gebruiken om een karakter een n aantal keer te herhalen... Dit heb je nog niet geleerd, maar bekijk hiervoor dit MDN-artikel eens: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+
+for (let i = 1; i <= 5; i++) {
+    console.log('*'.repeat(i));
+}
+
 // ==========================================
 
 
@@ -19,7 +23,15 @@
 // loop...
 // loop...
 // klaar!
-// ==========================================
+// =======
+
+for (let i = 1; i <= 5; i++) {
+    if (i < 5) {
+        console.log('loop...');
+    } else {
+        console.log('Klaar!');
+    }
+}
 
 
 // ==========================================
@@ -34,6 +46,13 @@
 // 'INV-0006'
 // 'INV-0007'
 // 'INV-0008'
+
+for (let i = 1; i <= 8; i++) {
+    let beginNummer = String(i);
+    let factuurnummerPadded = beginNummer.padStart(4, "0");
+    let factuurnummer = "INV-" + factuurnummerPadded;
+    console.log(factuurnummer);
+}
 
 // ==========================================
 
@@ -54,6 +73,23 @@
 // 16:00
 // 17:00 Bijna klaar...
 // 18:00
+
+for (let i = 9; i <= 18; i++) {
+    let beginNummer = String(i);
+    let tijd = beginNummer + ":00";
+
+    if (i === 10 || i === 14) {
+        console.log(tijd + " Koffiepauze!");
+    } else if (i === 12) {
+        console.log(tijd + " Lunchpauze!");
+    } else if (i === 17) {
+        console.log(tijd + " Bijna klaar...");
+    } else {
+        console.log(tijd);
+    }
+}
+
+
 // ==========================================
 
 
@@ -71,6 +107,19 @@
 // >> 7
 // >> 8
 // >> 9
+
+
+for (let i = 0; i <= 9; i++) {
+    let beginNummer = String(i);
+
+    if (i <= 2) {
+        console.log(i);
+    } else if (i >=3 && i <=5) {
+        console.log("> "+i);
+    } else if (i >= 6) {
+    console.log(">> " + i);
+}
+}
 // ==========================================
 
 
@@ -112,5 +161,24 @@
 // etc.
 // ==========================================
 
+for (let i = 0; i <= 100; i++) {
+    let toPrint = "";
+    switch (true) {
+        case i % 3 === 0 && i % 5 === 0:
+            toPrint += "FizzBuzz";
+            break;
+        case i % 3 === 0:
+            toPrint += "Fizz";
+            break;
+        case i % 5 === 0:
+            toPrint += "Buzz";
+            break;
+        default:
+            toPrint += i
+            break;
+    }
+    console.log(toPrint)
+
+}
 
 
