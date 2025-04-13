@@ -110,19 +110,15 @@ function determineSalaryIncreaseByScore(score) {
     let percentage ;
     switch (true) {
         case score === 100:
-            console.log(score + "is 100")
             percentage = 6;
             break;
-        case 60 >= score <= 69:
-            console.log(score + "is between 60 and 69")
+        case score >= 60 && score <= 69:
             percentage = 2;
             break;
-        case 70 <= score <= 89:
-            console.log(score + "is between 70 and 89")
+        case score >= 70 && score <= 89:
             percentage = 3;
             break;
-        case 90 <= score >= 99:
-            console.log(score + "is between 90 and 99")
+        case score >= 90 && score <= 99:
             percentage = 4;
             break;
         default:
@@ -152,6 +148,41 @@ scores
 // ];
 // ==========================================
 
+const scores1 = [
+    {name: 'Max', score: 83, salaryIncrease: null},
+    {name: 'Sophia', score: 77, salaryIncrease: null},
+    {name: 'Ali', score: 92, salaryIncrease: null},
+    {name: 'Nina', score: 66, salaryIncrease: null},
+    {name: 'Otis', score: 100, salaryIncrease: null},
+];
+
+function determineSalaryIncreaseByScore1(score) {
+    let percentage;
+    switch (true) {
+        case score === 100:
+            percentage = 6;
+            break;
+        case score >= 90 && score <= 99:
+            percentage = 4;
+            break;
+        case score >= 70 && score <= 89:
+            percentage = 3;
+            break;
+        case score >= 60 && score <= 69:
+            percentage = 2;
+            break;
+        default:
+            percentage = 0;
+    }
+    return percentage;
+}
+
+scores1.forEach(employee => {
+    const percentage = determineSalaryIncreaseByScore1(employee.score);
+    employee.salaryIncrease = `${percentage}%`;
+});
+console.log(scores1);
+
 
 // ==========================================
 // Opdracht 5. Bob wil ervoor zorgen dat al zijn medewerkers een correct bedrijfs-e-mailadres hebben. Deze e-mailadressen moeten
@@ -170,7 +201,7 @@ scores
 // ]
 // ==========================================
 
-const employees = [
+const employees3 = [
     {firstName: 'Max', lastName: 'Janssen'},
     {firstName: 'Sophia', lastName: 'Vries'},
     {firstName: 'Ali', lastName: 'Bakir'},
@@ -178,9 +209,26 @@ const employees = [
     {firstName: 'Otis', lastName: 'Kuiper'},
 ];
 
+employees3.forEach(employee => {
+    employee.email = `${employee.firstName}.${employee.lastName}@loop-it-solutions.nl`;
+});
+console.log(employees3);
+
+
 // ==========================================
 // Opdracht 6 (BONUS). Bob wil dat alle e-mailadressen in kleine letters worden opgeslagen, zodat ze consistent zijn.
 // Kun je je script aanpassen om dit voor elkaar te krijgen? Dit heb je nog niet geleerd, maar Google is your best friend...
 // ==========================================
 
+const employees4 = [
+    {firstName: 'Max', lastName: 'Janssen'},
+    {firstName: 'Sophia', lastName: 'Vries'},
+    {firstName: 'Ali', lastName: 'Bakir'},
+    {firstName: 'Nina', lastName: 'Berg'},
+    {firstName: 'Otis', lastName: 'Kuiper'},
+];
 
+employees4.forEach(employee => {
+    employee.email = `${employee.firstName.toLowerCase()}.${employee.lastName.toLowerCase()}@loop-it-solutions.nl`;
+});
+console.log(employees4);

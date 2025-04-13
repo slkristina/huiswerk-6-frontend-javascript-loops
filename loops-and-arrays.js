@@ -10,6 +10,7 @@
 // Vergadering om 15:30
 // Vergadering om 17:00
 
+
 const meetingTimes = ['09:00', '10:30', '14:00', '15:30', '17:00'];
 
 for (let i = 0; i < meetingTimes.length; i++) {
@@ -17,11 +18,7 @@ for (let i = 0; i < meetingTimes.length; i++) {
 }
 
 const answer1 = meetingTimes.map(time =>  console.log(`Vergadering om ${time}`));
-
-
 // ==========================================
-
-
 
 
 // ==========================================
@@ -49,7 +46,7 @@ console.log(answerTwoArray)
 const answer2 = salaries.map(salary => salary * 1.05)
 console.log(answer2);
 
-// ==========================================
+
 
 
 
