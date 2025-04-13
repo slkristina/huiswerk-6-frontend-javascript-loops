@@ -229,6 +229,6 @@ const employees4 = [
 ];
 
 employees4.forEach(employee => {
-    employee.email = `${employee.firstName.toLowerCase()}.${employee.lastName.toLowerCase()}@loop-it-solutions.nl`;
+    employee.email = `${employee.firstName}.${employee.lastName}@loop-it-solutions.nl`.toLowerCase();
 });
 console.log(employees4);

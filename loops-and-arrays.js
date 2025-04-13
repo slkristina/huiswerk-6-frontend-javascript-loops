@@ -14,12 +14,11 @@
 const meetingTimes = ['09:00', '10:30', '14:00', '15:30', '17:00'];
 
 for (let i = 0; i < meetingTimes.length; i++) {
-    console.log("Vergadering om "+ meetingTimes[i]);
+    console.log("Vergadering om " + meetingTimes[i]);
 }
 
-const answer1 = meetingTimes.map(time =>  console.log(`Vergadering om ${time}`));
+const answer1 = meetingTimes.map(time => console.log(`Vergadering om ${time}`));
 // ==========================================
-
 
 // ==========================================
 // Opdracht 2. In tegenstelling tot Bob, werken de andere medewerkers van Loop-it Solutions wél hard.
@@ -47,11 +46,6 @@ const answer2 = salaries.map(salary => salary * 1.05)
 console.log(answer2);
 
 
-
-
-
-
-
 // ==========================================
 // Opdracht 3. Eén van Bob's taken is medewerkers feliciteren met hun "zoveelste" verjaardag.
 // Daarvoor moet hij natuurlijk wel weten hoe oud iemand is geworden - en hoofdrekenen is niet zijn sterkste kant.
@@ -62,7 +56,7 @@ console.log(answer2);
 
 const birthYears = [1995, 1997, 1990, 2003, 1982];
 
-for (let i = 0; i <birthYears.length; i++) {
+for (let i = 0; i < birthYears.length; i++) {
     let age = 2025 - birthYears[i];
     console.log(age)
 }
@@ -71,8 +65,6 @@ const answer3 = birthYears.map(year => new Date().getFullYear() - year)
 
 console.log(answer3)
 // ==========================================
-
-
 
 
 // ==========================================
@@ -97,8 +89,6 @@ console.log(answer4)
 // ==========================================
 
 
-
-
 // ==========================================
 // Opdracht 5 (BONUS). Na een dag bij Loop-it Solutions zit je er lekker in, tot je beseft dat één van de machines de
 // productiecodes verkeerd genereert en Bob deze altijd met de hand verbetert. Geen wonder dat er zo weinig werk verzet wordt...
@@ -115,4 +105,9 @@ console.log(answer4)
 
 const productionCodes = [" abC123  ", "  DEF456", "ghi789  ", "JKL012"];
 
+const answer5 = productionCodes
+    .map(code => code
+        .toUpperCase()
+        .trim())
 
+console.log(answer5);
